@@ -20,3 +20,5 @@ function editEmployee(employee){
   $("#wizard").html(form.$el);
 }
 
+var fn = viewRegistry.getValue("show");
+fn();
