@@ -52,7 +52,7 @@ define(["employeeViews"], function(employeeViews){
 define(["employeeViews"], function(employeeViews){
 
   var command = someLogicToFigureOutWhatToDo();
-
   var fn = employeeViews.getValue(command);
   fn();
+
 });
