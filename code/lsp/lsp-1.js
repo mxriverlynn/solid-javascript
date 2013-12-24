@@ -24,7 +24,7 @@ Rectangle.prototype.area = function(){
 describe("area of a rectangle", function(){
   var rectangle = new Rectangle();
   rectangle.setHeight(4);
-  rectangle.setHeight(5);
+  rectangle.setWidth(5);
 
   it("should be length, squared", function(){
     expect(rectangle.area()).toBe(20);

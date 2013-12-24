@@ -1,28 +1,56 @@
-// Marionette.Region
-// -----------------
-//
-// Manage the visual regions of your composite application.
-// https://marionettejs.com
+// Shape
+// -----
 
-Marionette.Region = function(options){
-  // ...
+function Shape(){}
+Shape.prototype.area = function(){};
+
+// Rectangle
+// ---------
+
+function Rectangle(){}
+Rectangle.prototype = Object.create(Shape);
+
+Rectangle.prototype.setHeight = function(height){
+  this.height = height;
 };
 
-// Region Instance Methods
-// -----------------------
+Rectangle.prototype.setWidth = function(width){
+  this.width = width;
+};
 
-_.extend(Marionette.Region.prototype, Backbone.Events, {
-  // ...
+Rectangle.prototype.area = function(){
+  return this.height * this.width;
+};
 
-  close: function(view){
-    // ...
+// Square
+// ------
 
-    // call 'close' or 'remove', depending on which is found
-    if (view.close) { view.close(); }
-    else if (view.remove) { view.remove(); }
+function Square(){}
+Square.prototype = Object.create(Shape);
 
-    // ...
-  },
+Square.prototype.setSize = function(size){
+  this.height = size;
+  this.width = size;
+};
 
-  // ...
+// Test
+// ----
+
+describe("area of a rectangle", function(){
+  var rectangle = new Rectangle();
+  rectangle.setHeight(4);
+  rectangle.setWidth(5);
+
+  it("should be length, squared", function(){
+    expect(rectangle.area()).toBe(20);
+  });
+});
+
+describe("area of a square", function(){
+  var square = new Square();
+  square.setSize(5);
+
+  it("should be size, squared", function(){
+    expect(square.area()).toBe(25);
+  });
 });

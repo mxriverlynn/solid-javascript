@@ -20,12 +20,12 @@ Square.prototype.setWidth = function(width){
 // Test
 // ----
 
-describe("area of a rectangle", function(){
+describe("area of a square", function(){
   var square = new Square();
   square.setHeight(4);
   square.setWidth(5);
 
-  it("should be length, squared", function(){
-    expect(rectangle.area()).toBe(20);
+  it("should be size, squared", function(){
+    expect(square.area()).toBe(20);
   });
 });
