@@ -1,6 +1,7 @@
 var employee = someEmployee;
+var action = "view";
 
-switch (someValue) {
+switch (action) {
   case "view": 
     showEmployee(someEmployee);
     break;

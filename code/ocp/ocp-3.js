@@ -22,6 +22,8 @@ define(["registry"], function(registry){
     form.render();
     $("#wizard").html(form.$el);
   }
+
+  return viewRegistry;
 }
 
 // createDestroyEmployees.js
