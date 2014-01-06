@@ -1,6 +1,3 @@
-var employee = someEmployee;
-var action = "view";
-
 var viewRegistry = new Registry();
 viewRegistry.register("view", showEmployee);
 viewRegistry.register("edit", editEmployee);
@@ -21,5 +18,7 @@ function editEmployee(employee){
   $("#wizard").html(form.$el);
 }
 
+var employee = someEmployee;
+var action = "view";
 var fn = viewRegistry.getValue(action);
-fn();
+fn(employee);
