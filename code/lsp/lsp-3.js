@@ -8,7 +8,7 @@ Shape.prototype.area = function(){};
 // ---------
 
 function Rectangle(){}
-Rectangle.prototype = Object.create(Shape);
+Rectangle.prototype = Object.create(Shape.prototype);
 
 Rectangle.prototype.setHeight = function(height){
   this.height = height;
@@ -26,7 +26,7 @@ Rectangle.prototype.area = function(){
 // ------
 
 function Square(){}
-Square.prototype = Object.create(Shape);
+Square.prototype = Object.create(Shape.prototype);
 
 Square.prototype.setSize = function(size){
   this.height = size;

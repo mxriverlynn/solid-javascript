@@ -12,7 +12,7 @@ Shape.prototype.area = function(){};
 // ---------
 
 function Rectangle(){}
-Rectangle.prototype = Object.create(Shape);
+Rectangle.prototype = Object.create(Shape.prototype);
 
 // override the inherited method
 

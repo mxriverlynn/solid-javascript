@@ -2,7 +2,7 @@
 // ------
 
 var Square = function(){};
-Square.prototype = Object.create(Rectangle);
+Square.prototype = Object.create(Rectangle.prototype);
 
 Square.prototype.setHeight = function(height){
   this.setSize(height);
