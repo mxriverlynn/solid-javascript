@@ -21,12 +21,16 @@ Rectangle.prototype.area = function(){
 // Test
 // ----
 
-describe("area of a rectangle", function(){
-  var rectangle = new Rectangle();
-  rectangle.setHeight(4);
-  rectangle.setWidth(5);
+function testIt(rect){
+  describe("area of a rectangle", function(){
+    rect.setHeight(4);
+    rect.setWidth(5);
 
-  it("should be length, squared", function(){
-    expect(rectangle.area()).toBe(20);
+    it("should be length, squared", function(){
+      expect(rect.area()).toBe(20);
+    });
   });
-});
+}
+
+var rectangle = new Rectangle();
+testIt(rectangle);

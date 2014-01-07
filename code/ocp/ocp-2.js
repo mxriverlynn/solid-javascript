@@ -18,7 +18,8 @@ function editEmployee(employee){
   $("#wizard").html(form.$el);
 }
 
-var employee = someEmployee;
-var action = "view";
-var fn = viewRegistry.getValue(action);
-fn(employee);
+var actionName = "view";
+var action = viewRegistry.getValue(actionName);
+
+var employee = getSomeEmployee();
+action(employee);
