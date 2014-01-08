@@ -1,18 +1,13 @@
-var key = {
-  pin1: function(){
-    return 0.37;
-  },
+function MyType(doer){
+  this.doer = doer;
+}
 
-  "2pin": function(){
-    return 3.24;
-  },
-
-  pin3: function(){
-    return 0.0583;
-  }
+MyType.prototype.doStuff = function(someValue){
+  var foo = "bar";
+  var baz = this.doer.doThat(foo);
+  return baz - someValue;
 };
 
-var lock = new Lock();
-
-lock.lockIt(key);
-lock.unlockIt(key);
+var something = new SomeThing("new parameter");
+var myObj = new MyType(something);
+myObj.doStuff();

@@ -1,27 +1,31 @@
 var orgChart = {
  
   addNewEmployee: function(){
-    var that = this;
- 
-    var employeeDetail = this.getEmployeeDetail();
+    var employeeDetail = this.getEmployeeDetailForm();
     employeeDetail.on("complete", function(employee){
- 
-      var managerSelector = that.selectManager(employee);
-      managerSelector.on("save", function(employee){
-        employee.save();
-      });
- 
-    });
+      this.selectManager(employee);
+    }, this);
+  },
+
+  selectManager: function(employee){
+    var managerSelector = this.getSelectManagerForm(employee);
+    managerSelector.on("complete", function(employee){
+      this.saveEmployee(employee);
+    }, this);
+  },
+
+  saveEmployee: function(employee){
+    employee.save();
   },
  
-  getEmployeeDetail: function(){
+  getEmployeeDetailForm: function(){
     var form = new EmployeeDetailForm();
     form.render();
     $("#wizard").html(form.el);
     return form;
   },
  
-  selectManager: function(employee){
+  getSelectManagerForm: function(employee){
     var form = new SelectManagerForm({
       model: employee
     });

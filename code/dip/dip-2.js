@@ -8,6 +8,6 @@ MyType.prototype.doStuff = function(someValue){
   return baz - someValue;
 };
 
-var something = new SomeThing();
+var something = new SomeThing("new parameter");
 var myObj = new MyType(something);
 myObj.doStuff();

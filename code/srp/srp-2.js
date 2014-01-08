@@ -1,14 +1,14 @@
 var orgChart = {
  
   addNewEmployee: function(){
-    var employeeDetail = this.getEmployeeDetail();
+    var employeeDetail = this.getEmployeeDetailForm();
     employeeDetail.on("complete", function(employee){
       this.selectManager(employee);
     }, this);
   },
 
   selectManager: function(employee){
-    var managerSelector = this.selectManager(employee);
+    var managerSelector = this.getSelectManagerForm(employee);
     managerSelector.on("complete", function(employee){
       this.saveEmployee(employee);
     }, this);
