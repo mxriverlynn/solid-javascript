@@ -29,8 +29,11 @@ function Square(){}
 Square.prototype = Object.create(Shape.prototype);
 
 Square.prototype.setSize = function(size){
-  this.height = size;
-  this.width = size;
+  this.size = size;
+};
+
+Square.prototype.area = function(){
+  return this.size * this.size;
 };
 
 // Test

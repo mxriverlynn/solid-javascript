@@ -9,4 +9,4 @@ MyType.prototype.doStuff = function(someValue){
 };
 
 var myObj = new MyType();
-myObj.doStuff();
+myObj.doStuff(3.1415926);

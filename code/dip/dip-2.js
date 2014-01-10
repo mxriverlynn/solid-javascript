@@ -10,4 +10,4 @@ MyType.prototype.doStuff = function(someValue){
 
 var something = new SomeThing("new parameter");
 var myObj = new MyType(something);
-myObj.doStuff();
+myObj.doStuff(3.1415926);
